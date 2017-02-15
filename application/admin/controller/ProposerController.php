@@ -6,7 +6,7 @@ use app\admin\controller\AdminAuth;
 use think\Validate;
 use think\Image;
 use think\Request;
-class PostsController extends AdminAuth
+class ProposerController extends AdminAuth
 {
 	//模块基本信息
 //	private $data = array(
@@ -60,8 +60,8 @@ class PostsController extends AdminAuth
 
         if(!empty($param)){
             $this->data['search'] = $param;
-            if(isset($param['title'])){
-                $map['post_title'] = ['like','%'.$param['title'].'%'];
+            if(isset($param['nick_name'])){
+                $map['nick_name'] = ['like','%'.$param['nickName'].'%'];
             }
 
             if(isset($param['start_time']) || isset($param['end_time'])){
